@@ -1,0 +1,62 @@
+{
+  "name": "micro-fs",
+  "version": "1.0.0-beta",
+  "description": "File system and globbing utilities",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint lib test",
+    "test": "nyc mocha",
+    "report": "nyc report --reporter=html",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "lib/**/*.js"
+    ]
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-band/micro-fs.git"
+  },
+  "keywords": [
+    "glob",
+    "fs",
+    "file-system",
+    "copy",
+    "cp",
+    "move",
+    "mv",
+    "rm",
+    "delete",
+    "mkdir",
+    "archive",
+    "zip"
+  ],
+  "author": "d-band",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/d-band/micro-fs/issues"
+  },
+  "homepage": "https://github.com/d-band/micro-fs#readme",
+  "dependencies": {
+    "es6-promisify": "^6.0.1",
+    "glob-stream": "^6.1.0",
+    "yazl": "^2.5.1"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.5",
+    "eslint": "^6.1.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "pre-commit": "^1.2.2"
+  }
+}
