@@ -47,6 +47,16 @@ mfs.glob('src/**/*.js', options).then(files => {
 });
 ```
 
+## API
+
+- `mfs.copy(src, dest, options) => Promise`
+- `mfs.move(src, dest, options) => Promise`
+- `mfs.zip(src, dest, options) => Promise`
+- `mfs.glob(src, options) => Promise`
+- `mfs.delete(src, options) => Promise`
+
+> `src` is globs and `options` are documented in [glob-stream](https://www.npmjs.com/package/glob-stream).
+
 ## Report a issue
 
 * [All issues](https://github.com/d-band/micro-fs/issues)
