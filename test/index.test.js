@@ -65,4 +65,16 @@ describe('lib/index.js', function () {
       assert.strictEqual(files.length, 1);
     });
   });
+  it('test mfs.copy file function', () => {
+    return mfs.copy('a0/d.js', path.join(ROOT, 'a1/d1.js'), {
+      cwd: ROOT
+    }).then(() => {
+      return mfs.glob('a1/d1.js', { cwd: ROOT });
+    }).then(files => {
+      assert.strictEqual(files.length, 1);
+      return mfs.fsp.read(files[0].path, 'utf8');
+    }).then(data => {
+      assert.strictEqual(data, 'data: a0/d.js');
+    });
+  });
 });
