@@ -39,7 +39,7 @@
   "author": "d-band",
   "license": "MIT",
   "engines": {
-    "node": ">=10"
+    "node": ">=8.5.0"
   },
   "bugs": {
     "url": "https://github.com/d-band/micro-fs/issues"
