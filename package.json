@@ -1,6 +1,6 @@
 {
   "name": "micro-fs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "File system and globbing utilities",
   "main": "lib/index.js",
   "scripts": {
@@ -46,7 +46,6 @@
   },
   "homepage": "https://github.com/d-band/micro-fs#readme",
   "dependencies": {
-    "es6-promisify": "^6.0.1",
     "glob-stream": "^6.1.0",
     "yazl": "^2.5.1"
   },

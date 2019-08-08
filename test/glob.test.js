@@ -1,15 +1,15 @@
 const assert = require('assert');
-const mfs = require('../lib');
+const glob = require('../lib/glob');
 const { ROOT, init, clean } = require('./utils');
 
-describe('lib/index.js', function () {
+describe('lib/glob.js', function () {
   this.timeout(0);
 
   before(() => init());
   after(() => clean());
 
   it('test glob all', () => {
-    return mfs.glob('a0/**/*', {
+    return glob('a0/**/*', {
       cwd: ROOT
     }).then(files => {
       assert.strictEqual(files.length, 11);
@@ -17,7 +17,7 @@ describe('lib/index.js', function () {
   });
 
   it('test glob files', () => {
-    return mfs.glob('a0/**/*.js', {
+    return glob('a0/**/*.js', {
       cwd: ROOT
     }).then(files => {
       assert.strictEqual(files.length, 3);
@@ -25,7 +25,7 @@ describe('lib/index.js', function () {
   });
 
   it('test glob dirs', () => {
-    return mfs.glob('a0/**/*/', {
+    return glob('a0/**/*/', {
       cwd: ROOT
     }).then(files => {
       assert.strictEqual(files.length, 6);
@@ -33,7 +33,7 @@ describe('lib/index.js', function () {
   });
 
   it('test glob array', () => {
-    return mfs.glob(['a0/**/*.js', 'a0/**/*.css'], {
+    return glob(['a0/**/*.js', 'a0/**/*.css'], {
       cwd: ROOT
     }).then(files => {
       assert.strictEqual(files.length, 5);
@@ -41,7 +41,7 @@ describe('lib/index.js', function () {
   });
 
   it('test glob error', () => {
-    return mfs.glob('a100', {
+    return glob('a100', {
       cwd: ROOT
     }).then(() => {
       assert.fail();
