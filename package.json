@@ -46,7 +46,7 @@
   },
   "homepage": "https://github.com/d-band/micro-fs#readme",
   "dependencies": {
-    "glob-stream": "^6.1.0",
+    "glob-stream": "^8.0.0",
     "yazl": "^2.5.1"
   },
   "devDependencies": {
